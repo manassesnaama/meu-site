@@ -145,51 +145,7 @@
     letter-spacing: -0.05em;
   }
 
-  .hero-badge {
-    position: absolute;
-    top: 50%;
-    right: 4rem;
-    transform: translateY(-50%);
-    width: 140px;
-    height: 140px;
-    border: 1px solid rgba(201,168,76,0.3);
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    animation: rotateBadge 20s linear infinite;
-  }
-
-  @keyframes rotateBadge {
-    from { transform: translateY(-50%) rotate(0deg); }
-    to { transform: translateY(-50%) rotate(360deg); }
-  }
-
-  .hero-badge-inner {
-    animation: rotateBadge 20s linear infinite reverse;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .hero-badge span {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.6rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold);
-    line-height: 1.6;
-  }
-
-  .hero-badge strong {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.8rem;
-    color: var(--text);
-    display: block;
-    line-height: 1;
-  }
+  .hero-badge { display: none; }
 
   .hero-content { position: relative; z-index: 2; max-width: 780px; }
 
@@ -1127,7 +1083,7 @@
           <div class="belt belt-preto"></div>
           <div class="belt belt-preto"></div>
         </div>
-        <p class="professor-exp">3x Campeão Brasileiro · 1x Campeão Mundial de Muay Thai</p>
+        <p class="professor-exp">3x Campeão Brasileiro · Campeão Mundial WMO Tailândia 2018 · +70 Lutas</p>
       </div>
     </div>
     <div class="professor-card fade-up" style="background: var(--bg3); display: flex; flex-direction: column; justify-content: center; padding: 4rem; aspect-ratio: auto;">
@@ -1135,25 +1091,25 @@
         <div class="section-label" style="margin-bottom: 1rem;">Trajetória</div>
         <h2 style="font-size: clamp(2rem, 4vw, 3.5rem); margin-bottom: 1.5rem;">UM MESTRE,<br>TODAS AS ARTES</h2>
         <p style="color: var(--muted); line-height: 1.8; font-size: 0.95rem; max-width: 480px;">
-          Com mais de uma década dedicada às artes marciais, o Prof. Tidi acumulou conquistas que poucos atletas brasileiros alcançaram. Três vezes Campeão Brasileiro e uma vez Campeão Mundial de Muay Thai, ele traz para cada aula a experiência de quem viveu o esporte de alto nível.
+          Com mais de 30 anos envolvidos nas artes marciais e mais de 20 anos dedicados ao Muay Thai, o Prof. Tidi acumulou conquistas que poucos atletas brasileiros alcançaram. Campeão Mundial pela WMO na Tailândia em 2018, 3x Campeão Brasileiro, Campeão Interestadual e 2x Campeão Paulista, com mais de 70 lutas e mais de 60 vitórias — ele traz para cada aula a experiência de quem viveu o esporte no mais alto nível.
         </p>
       </div>
       <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 1rem;">
+        <div style="border-left: 3px solid var(--red); padding-left: 1.2rem;">
+          <span style="font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--text); display: block; line-height: 1;">+30</span>
+          <span style="font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);">Anos nas<br>Artes Marciais</span>
+        </div>
+        <div style="border-left: 3px solid var(--gold); padding-left: 1.2rem;">
+          <span style="font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--text); display: block; line-height: 1;">+70</span>
+          <span style="font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);">Lutas · +60<br>Vitórias</span>
+        </div>
         <div style="border-left: 3px solid var(--red); padding-left: 1.2rem;">
           <span style="font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--text); display: block; line-height: 1;">3x</span>
           <span style="font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);">Campeão Brasileiro<br>Muay Thai</span>
         </div>
         <div style="border-left: 3px solid var(--gold); padding-left: 1.2rem;">
-          <span style="font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--text); display: block; line-height: 1;">1x</span>
-          <span style="font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);">Campeão Mundial<br>Muay Thai</span>
-        </div>
-        <div style="border-left: 3px solid rgba(255,255,255,0.2); padding-left: 1.2rem;">
-          <span style="font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--text); display: block; line-height: 1;">4</span>
-          <span style="font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);">Modalidades<br>Ensinadas</span>
-        </div>
-        <div style="border-left: 3px solid rgba(255,255,255,0.2); padding-left: 1.2rem;">
-          <span style="font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--text); display: block; line-height: 1;">+10</span>
-          <span style="font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);">Anos de<br>Experiência</span>
+          <span style="font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--text); display: block; line-height: 1;">2x</span>
+          <span style="font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);">Campeão Paulista<br>+ Interestadual</span>
         </div>
       </div>
     </div>
@@ -1168,7 +1124,7 @@
   <div class="planos-grid">
     <div class="plano-card fade-up">
       <span class="plano-name">1 Modalidade</span>
-      <div class="plano-price"><span>R$</span>110</div>
+      <div class="plano-price"><span>R$</span>120</div>
       <p class="plano-period">por mês · sem fidelidade</p>
       <ul class="plano-features">
         <li>1 modalidade à escolha</li>
@@ -1242,7 +1198,7 @@
           <div class="contato-icon">📸</div>
           <div>
             <span class="contato-item-label">Instagram</span>
-            <span class="contato-item-value">@tididthaiiteam</span>
+            <span class="contato-item-value">@tidilutanaopara</span>
           </div>
         </div>
       </div>
