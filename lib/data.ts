@@ -4,10 +4,9 @@ export const whatsappNumber = "5519971669311";
 export const whatsappText = "Olá, quero marcar uma aula experimental na Tidi Thai Team.";
 
 export const navLinks = [
-  { href: "/", label: "Início" },
+  { href: "/", label: "Home" },
   { href: "/planos", label: "Planos" },
-  { href: "/sobre", label: "Professor" },
-  { href: "/lions-fight", label: "Lions Fight" },
+  { href: "/sobre", label: "Sobre Mim" },
   { href: "/contato", label: "Contato" }
 ];
 

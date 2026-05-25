@@ -24,8 +24,9 @@ export function SiteHeader() {
       </nav>
 
       <div className="header-actions">
-        <Link className="ghost-link" href="/login">Área do aluno</Link>
-        <a className="solid-link" href={whatsappHref} target="_blank" rel="noreferrer">Aula grátis</a>
+        <Link className="event-link" href="/lions-fight">Lions Fight</Link>
+        <Link className="ghost-link" href="/login">Entrar</Link>
+        <a className="solid-link" href={whatsappHref} target="_blank" rel="noreferrer">Aula experimental</a>
       </div>
     </header>
   );
