@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { PublicPage } from "@/components/PublicPage";
-import { disciplines, plans, schedules } from "@/lib/data";
 import { whatsappHref } from "@/lib/whatsapp";
 
 const trainingVideos = [
@@ -73,76 +72,6 @@ export default function HomePage() {
               </article>
             ))}
           </div>
-        </section>
-
-        <section className="section no-top">
-          <div className="cards four discipline-cards">
-            {disciplines.map((discipline, index) => (
-              <article className="card discipline-card" key={discipline.name}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <h3>{discipline.name}</h3>
-                <p>{discipline.detail}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="section master-band">
-          <div>
-            <p className="eyebrow">Prof. Luis “Tidi” Fernando</p>
-            <h2>Experiência de campeão dentro da sua rotina.</h2>
-          </div>
-          <div className="master-stats">
-            <article><strong>30+</strong><span>anos nas artes marciais</span></article>
-            <article><strong>70+</strong><span>lutas disputadas</span></article>
-            <article><strong>2018</strong><span>campeão mundial WMO na Tailândia</span></article>
-          </div>
-        </section>
-
-        <section className="section">
-          <div className="section-title">
-            <p className="eyebrow">Planos</p>
-            <h2>Escolha o ritmo do treino.</h2>
-          </div>
-          <div className="cards three">
-            {plans.map((plan) => (
-              <article className={plan.featured ? "card featured plan-card" : "card plan-card"} key={plan.name}>
-                <h3>{plan.name}</h3>
-                <strong className="price">{plan.price}</strong>
-                <p>por mês, sem fidelidade</p>
-                <ul>
-                  {plan.benefits.map((benefit) => <li key={benefit}>{benefit}</li>)}
-                </ul>
-                <a className={plan.featured ? "button primary" : "button secondary"} href={whatsappHref} target="_blank" rel="noreferrer">
-                  Quero esse plano
-                </a>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="section split">
-          <div>
-            <p className="eyebrow">Horários</p>
-            <h2>Grade organizada para encaixar na rotina.</h2>
-          </div>
-          <div className="list-panel">
-            {schedules.map(([name, time]) => (
-              <div key={name}>
-                <strong>{name}</strong>
-                <span>{time}</span>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="cta-band">
-          <p className="eyebrow">Primeiro passo</p>
-          <h2>Venha sentir o treino antes de decidir.</h2>
-          <p>
-            Conheça a energia do treino na prática.
-          </p>
-          <a className="button primary" href={whatsappHref} target="_blank" rel="noreferrer">Marcar pelo WhatsApp</a>
         </section>
       </main>
     </PublicPage>
