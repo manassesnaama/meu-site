@@ -1,0 +1,19 @@
+node_modules/
+.runtime/
+.next/
+.vercel/
+.netlify/
+*.log
+*.tsbuildinfo
+
+.env
+.env.*
+!.env.example
+
+public/uploads/
+prisma/neon-bootstrap.sql
+
+# Ferramentas locais de pre-visualizacao, fora do aplicativo publicado.
+public/index.html
+preview-server.mjs
+scripts/preview-server.ps1

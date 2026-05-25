@@ -1,0 +1,120 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+enum Role {
+  STUDENT
+  TEACHER
+  ADMIN
+}
+
+enum StudentStatus {
+  ACTIVE
+  WARNING
+  OVERDUE
+  INACTIVE
+}
+
+model User {
+  id           String   @id @default(cuid())
+  name         String
+  username     String   @unique
+  email        String?
+  passwordHash String
+  mustChangePassword Boolean @default(true)
+  role         Role     @default(STUDENT)
+  imageUrl     String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  student      Student?
+}
+
+model Student {
+  id              String           @id @default(cuid())
+  userId          String           @unique
+  user            User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  phone           String
+  cpf             String?
+  address         String?
+  age             Int?
+  hasHealthIssue  Boolean          @default(false)
+  healthNotes     String?
+  active          Boolean          @default(true)
+  currentPlanId   String?
+  currentPlan     Plan?            @relation(fields: [currentPlanId], references: [id])
+  dueDate         DateTime
+  status          StudentStatus    @default(ACTIVE)
+  payments        Payment[]
+  evolutionPhotos EvolutionPhoto[]
+  attendances     Attendance[]
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+}
+
+model Plan {
+  id       String    @id @default(cuid())
+  name     String    @unique
+  price    Decimal   @db.Decimal(10, 2)
+  benefits String[]
+  students Student[]
+}
+
+model Payment {
+  id        String   @id @default(cuid())
+  studentId String
+  student   Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  amount    Decimal  @db.Decimal(10, 2)
+  paidAt    DateTime @default(now())
+  nextDue   DateTime
+  method    String?
+  note      String?
+}
+
+model EvolutionPhoto {
+  id        String   @id @default(cuid())
+  studentId String
+  student   Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  imageUrl  String
+  note      String?
+  takenAt   DateTime @default(now())
+}
+
+model Attendance {
+  id        String   @id @default(cuid())
+  studentId String
+  student   Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  className String
+  date      DateTime @default(now())
+}
+
+model Notice {
+  id        String   @id @default(cuid())
+  title     String
+  body      String
+  published Boolean  @default(true)
+  createdAt DateTime @default(now())
+}
+
+model LionsFightEvent {
+  id          String   @id @default(cuid())
+  title       String
+  date        DateTime?
+  description String
+  mediaUrls   String[]
+  champions   Champion[]
+  createdAt   DateTime @default(now())
+}
+
+model Champion {
+  id       String          @id @default(cuid())
+  eventId  String
+  event    LionsFightEvent @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  name     String
+  category String
+}
