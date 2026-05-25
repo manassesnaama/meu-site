@@ -29,14 +29,10 @@ export default function HomePage() {
           <div className="hero-media" />
           <div className="hero-content">
             <p className="eyebrow">Muay Thai, Jiu-Jitsu, Boxe e Performance</p>
-            <h1>Uma academia de luta com estrutura de plataforma profissional.</h1>
-            <p>
-              Treinos intensos, acompanhamento de alunos, evolução física registrada e
-              controle de mensalidades em um só lugar.
-            </p>
+            <h1>Tidi Thai Team</h1>
             <div className="hero-actions">
-              <a className="button primary" href={whatsappHref} target="_blank" rel="noreferrer">Agende sua aula experimental</a>
-              <Link className="button secondary" href="/login">Entrar na área do aluno</Link>
+              <a className="button primary" href={whatsappHref} target="_blank" rel="noreferrer">Agendar aula grátis</a>
+              <Link className="button secondary" href="/sobre">Conhecer o professor</Link>
             </div>
           </div>
         </section>
@@ -44,15 +40,15 @@ export default function HomePage() {
         <section className="home-photo-story" aria-label="Fotos da academia e treinos">
           <article className="photo-feature fight-night">
             <span>Competição</span>
-            <strong>Atletas preparados para lutar de verdade.</strong>
+            <strong>Atletas da casa.</strong>
           </article>
           <article className="photo-feature ring-action">
             <span>Treino técnico</span>
-            <strong>Muay Thai com intensidade, base e precisão.</strong>
+            <strong>Round por round.</strong>
           </article>
           <article className="photo-feature coach-work">
             <span>Professor</span>
-            <strong>Correção próxima em cada round.</strong>
+            <strong>Olhar de perto.</strong>
           </article>
         </section>
 
