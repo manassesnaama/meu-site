@@ -1,4 +1,5 @@
 import { DashboardShell } from "@/components/DashboardShell";
+import { StudentPhotoInput } from "@/components/StudentPhotoInput";
 import { prisma } from "@/lib/prisma";
 import { createStudent } from "./actions";
 
@@ -22,6 +23,7 @@ export default async function CadastroPage() {
         <label className="form-span">Endereco<input name="address" placeholder="Rua, numero, bairro e cidade" required /></label>
         <label>Idade<input name="age" type="number" min={3} max={100} placeholder="Idade do aluno" required /></label>
         <label>CPF opcional<input name="cpf" placeholder="000.000.000-00" /></label>
+        <StudentPhotoInput />
         <h2 className="form-section-title">Acesso e plano</h2>
         <label>Usuario de acesso<input name="username" placeholder="ex: joao.silva" required /></label>
         <label>Email opcional<input name="email" type="email" placeholder="email@exemplo.com" /></label>
@@ -33,7 +35,6 @@ export default async function CadastroPage() {
           </select>
         </label>
         <label>Data de vencimento<input name="dueDate" type="date" required /></label>
-        <label>Foto<input name="photo" type="file" disabled /></label>
         <h2 className="form-section-title">Saude e cuidados</h2>
         <label>
           Consta algum problema de saude?

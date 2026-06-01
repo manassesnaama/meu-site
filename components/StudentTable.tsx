@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { useMemo, useState } from "react";
+import { DeleteStudentButton } from "@/components/DeleteStudentButton";
 import type { PaymentStatus } from "@/lib/status";
 
 type StudentRow = {
@@ -11,6 +13,7 @@ type StudentRow = {
   dueDate: string;
   status: PaymentStatus;
   statusText: string;
+  imageUrl: string | null;
 };
 
 const filters: Array<{ id: "all" | PaymentStatus; label: string }> = [
@@ -49,15 +52,16 @@ export function StudentTable({ students }: { students: StudentRow[] }) {
       </section>
       <section className="table-panel">
         <table>
-          <thead><tr><th>Aluno</th><th>Plano</th><th>Telefone</th><th>Vencimento</th><th>Status</th></tr></thead>
+          <thead><tr><th>Aluno</th><th>Plano</th><th>Telefone</th><th>Vencimento</th><th>Status</th><th>Acoes</th></tr></thead>
           <tbody>
             {visible.map((student) => (
               <tr key={student.id}>
-                <td>{student.name}</td>
+                <td><div className="student-name-cell">{student.imageUrl ? <img src={student.imageUrl} alt="" /> : <span>{student.name.slice(0, 1)}</span>}<strong>{student.name}</strong></div></td>
                 <td>{student.plan}</td>
                 <td>{student.phone}</td>
                 <td>{student.dueDate}</td>
                 <td><span className={`status ${student.status}`}>{student.statusText}</span></td>
+                <td><div className="table-actions"><Link className="table-action" href={`/admin/alunos/${student.id}/editar`}>Editar</Link><DeleteStudentButton studentId={student.id} studentName={student.name} /></div></td>
               </tr>
             ))}
           </tbody>

@@ -25,7 +25,8 @@ export default async function AlunosAdminPage() {
       phone: student.phone,
       dueDate: student.dueDate.toLocaleDateString("pt-BR"),
       status,
-      statusText: statusLabel(status)
+      statusText: statusLabel(status),
+      imageUrl: student.user.imageUrl
     };
   });
 

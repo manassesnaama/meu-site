@@ -19,7 +19,8 @@ const studentSchema = z.object({
   healthNotes: z.string().trim().optional(),
   planId: z.string().min(1),
   dueDate: z.string().min(1),
-  password: z.string().min(6)
+  password: z.string().min(6),
+  photoData: z.string().max(360_000).optional()
 });
 
 export async function createStudent(formData: FormData) {
@@ -41,7 +42,8 @@ export async function createStudent(formData: FormData) {
     healthNotes: formData.get("healthNotes"),
     planId: formData.get("planId"),
     dueDate: formData.get("dueDate"),
-    password: formData.get("password")
+    password: formData.get("password"),
+    photoData: formData.get("photoData")
   });
 
   await prisma.user.create({
@@ -52,6 +54,7 @@ export async function createStudent(formData: FormData) {
       passwordHash: await hash(parsed.password, 12),
       mustChangePassword: true,
       role: "STUDENT",
+      imageUrl: parsed.photoData || null,
       student: {
         create: {
           phone: parsed.phone,
